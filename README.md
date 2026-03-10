@@ -44,7 +44,7 @@ The application uses a loan dataset containing the following features:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/shahabahmad7/loan-approval-prediction-app.git
    cd loan-approval-prediction-app
    ```
 
