@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Eligibility Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #e3f2ff, #f8fcff);
+            min-height: 100vh;
+        }
+        .card-custom {
+            border: none;
+            border-radius: 18px;
+            padding: 25px;
+            background: #ffffffd8;
+            backdrop-filter: blur(6px);
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.08);
+        }
+        h2 {
+            font-weight: 700;
+            color: #004aad;
+        }
+        label {
+            font-weight: 500;
+            color: #333;
+        }
+        .btn-primary {
+            background: #0066ff;
+            border: none;
+            padding: 12px;
+            font-size: 17px;
+            border-radius: 10px;
+        }
+        .btn-primary:hover {
+            background: #0050cc;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+
+<div class="container" style="max-width:600px;">
+    <h2 class="text-center mb-4">Loan Eligibility Predictor</h2>
+
+    <form action="/predict" method="POST" class="card-custom">
+
+        <label>Gender</label>
+        <select class="form-control mb-3" name="Gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <label>Married</label>
+        <select class="form-control mb-3" name="Married">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>Dependents</label>
+        <select class="form-control mb-3" name="Dependents">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3+</option>
+        </select>
+
+        <label>Education</label>
+        <select class="form-control mb-3" name="Education">
+            <option>Graduate</option>
+            <option>Not Graduate</option>
+        </select>
+
+        <label>Self Employed</label>
+        <select class="form-control mb-3" name="Self_Employed">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>Applicant Income</label>
+        <input type="number" name="ApplicantIncome" class="form-control mb-3">
+
+        <label>Loan Amount</label>
+        <input type="number" name="LoanAmount" class="form-control mb-3">
+
+        <label>Loan Amount Term</label>
+        <input type="number" name="Loan_Amount_Term" class="form-control mb-3">
+
+        <label>Credit History (0 or 1)</label>
+        <input type="number" name="Credit_History" class="form-control mb-3">
+
+        <label>Property Area</label>
+        <select class="form-control mb-3" name="Property_Area">
+            <option>Urban</option>
+            <option>Semiurban</option>
+            <option>Rural</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary w-100">Check Eligibility</button>
+    </form>
+</div>
+
+</body>
+</html>
