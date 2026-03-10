@@ -10,7 +10,17 @@ A machine learning-powered web application that predicts loan approval eligibili
 - **Real-time Prediction**: Instant loan eligibility assessment with probability scores
 - **User-Friendly Interface**: Clean form-based input with result visualization
 
-## 📊 Dataset
+## � Screenshots
+
+### Application Interface
+![Loan Application Form](screenshots/app_form.png)
+*The main loan application form where users input their information*
+
+### Prediction Results
+![Prediction Results](screenshots/app_results.png)
+*Sample prediction results showing approval status and probability*
+
+## �📊 Dataset
 
 The application uses a loan dataset containing the following features:
 - **Demographic Information**: Gender, Marital Status, Dependents, Education
@@ -39,6 +49,28 @@ The application uses a loan dataset containing the following features:
 - **Accuracy**: ~75-80% (based on test evaluation)
 - **Features**: Max iterations set to 1000 for convergence
 - **Pipeline**: Same preprocessing pipeline as Random Forest
+
+## 🤔 Why Random Forest Over Logistic Regression?
+
+After evaluating both algorithms on the loan approval dataset, **Random Forest was selected as the primary model** for the following reasons:
+
+### Performance Advantages
+- **Higher Accuracy**: Random Forest achieved better test accuracy (~78-82% vs ~75-80%)
+- **Better Handling of Non-Linear Relationships**: Loan approval involves complex interactions between features like income, credit history, and property area that Random Forest captures more effectively
+- **Feature Importance**: Automatically identifies and ranks important features, providing insights into what drives loan decisions
+
+### Practical Benefits
+- **Robustness**: Less sensitive to outliers and missing values compared to Logistic Regression
+- **No Feature Scaling Required**: Tree-based algorithms like Random Forest don't require standardization of numerical features
+- **Interpretability**: While Logistic Regression is more interpretable, Random Forest still provides feature importance scores
+- **Production Ready**: Handles mixed data types (categorical and numerical) seamlessly in the pipeline
+
+### When Logistic Regression Might Be Preferred
+- If model interpretability is the top priority (coefficients show feature impact direction)
+- For smaller datasets where overfitting is a major concern
+- When computational resources are limited (faster training and prediction)
+
+The final choice balances accuracy, robustness, and practical deployment considerations for a real-world loan approval system.
 
 ## 🔧 Installation
 
